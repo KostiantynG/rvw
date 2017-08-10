@@ -1,3 +1,4 @@
+Put csv file to path in application.properties csv.file.path
 Run spring-boot project
 
 curl -H "Content-Type: application/json" -X GET http://localhost:8090/mostActiveUsers/
