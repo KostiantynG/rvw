@@ -20,9 +20,6 @@ public class QuickstartSample {
         // Instantiates a client
         Translate translate = TranslateOptions.builder().apiKey("AIzaSyC2dmfyMpeOyxtR50emi5xQALlUgzDLc9o").build().service();
 
-
-
-
         Stream<String> lines = readFile("D:\\SqlLite\\Reviews.csv");
         List<String> textList = lines.parallel()
                 .filter(line -> !line.startsWith("Id"))
@@ -34,38 +31,8 @@ public class QuickstartSample {
                 TranslateOption.targetLanguage("ru")
         );
         translation.forEach(System.out::println);
-
-//        // The text to translate
-//        String text = "Hello, world!";
-//
-//        // Translates some text into Russian
-//        Translation translation = translate.translate(
-//                text,
-//                TranslateOption.sourceLanguage("en"),
-//                TranslateOption.targetLanguage("ru")
-//        );
-//
-//        System.out.printf("Text: %s%n", text);
-//        System.out.printf("MyTranslation: %s%n", translation.translatedText());
-//
-//
-//
-//
-//        List<String> textList = new ArrayList<>();
-//        textList.add("Hello");
-//        textList.add("My Friend");
-//
-//        // Translates some text into Russian
-//        List<Translation> translation2 = translate.translate(
-//                textList,
-//                Translate.TranslateOption.sourceLanguage("en"),
-//                Translate.TranslateOption.targetLanguage("ru")
-//        );
-//        translation2.forEach(System.out::println);
-
-
-
     }
+
     public static Stream<String> readFile(String inputFilePath) {
         Stream<String> lines = null;
         File file = new File(inputFilePath);
