@@ -71,6 +71,7 @@ public class ReviewServiceImpl implements ReviewService{
                         .flatMap(review -> Arrays.stream(splitByWords(review.getText())))
                         .collect(Collectors.groupingByConcurrent(s -> s, counting()));
         return wordsCount;
+
     }
 
     protected String[] splitByWords(String text) {

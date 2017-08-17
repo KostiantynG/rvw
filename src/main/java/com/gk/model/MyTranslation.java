@@ -11,8 +11,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Translation {
+public class MyTranslation {
     private String original;
     private String translated;
+    private String fromLanguage;
     private String toLanguage;
 }
